@@ -6,7 +6,6 @@ using HoloToolkit.Unity.InputModule;
 public class SelectObject : MonoBehaviour, IFocusable, IInputClickHandler {
     public void OnFocusEnter()
     {
-        Debug.Log("sphere");
         this.GetComponent<MeshRenderer>().material.color = Color.green;
         throw new System.NotImplementedException();
     }
@@ -21,7 +20,7 @@ public class SelectObject : MonoBehaviour, IFocusable, IInputClickHandler {
         this.GetComponent<MeshRenderer>().material.color = Color.green;
 
         //throw new System.NotImplementedException();
-        Debug.Log("Lion Clicked");
+        this.GetComponent<MeshRenderer>().material.color = Color.yellow;
     }
 
     // Use this for initialization

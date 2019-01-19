@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeshSimple : MonoBehaviour {
+public class meshSimple : MonoBehaviour {
 	// Use this for initialization
-	int meshNum = 30;
-	Mesh[] ms = new Mesh[30];
+	int meshNum = 65;
+	Mesh[] ms = new Mesh[65];
 	int counter = 0;
 	bool firstRun = true;
 	bool increase = true;
@@ -13,7 +13,7 @@ public class MeshSimple : MonoBehaviour {
 	void Start () {
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		Debug.Log (counter);
@@ -26,7 +26,7 @@ public class MeshSimple : MonoBehaviour {
 			GetComponent<MeshFilter> ().mesh = destMesh;
 			ms [counter] = destMesh;
 			counter++;
-		} else if (counter == meshNum && firstRun) {
+		} else if (counter == meshNum -1 && firstRun) {
 			firstRun = false;
 			increase = false;
 			float quality = 0.95f;
@@ -55,7 +55,7 @@ public class MeshSimple : MonoBehaviour {
 				}
 			}
 		}
-			
+
 
 	}
 }

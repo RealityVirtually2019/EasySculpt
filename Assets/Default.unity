@@ -155,6 +155,11 @@ Prefab:
     - target: {fileID: 114000012149591842, guid: 2ed75ffdf9031c94e8bce4b3d17b9928,
         type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011154029958, guid: 2ed75ffdf9031c94e8bce4b3d17b9928,
+        type: 2}
+      propertyPath: drawVisualMeshes
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -316,6 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803fc1ddade00b4ea254be0140a50bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshQuality: 0.5
+  meshStep: 0.5
+  meshMin: 0.001
 --- !u!1001 &1486792973
 Prefab:
   m_ObjectHideFlags: 0
@@ -372,15 +380,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 3b4925603b6b6884ab402425058a57e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.006
+      value: 0.016387
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b4925603b6b6884ab402425058a57e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.111
+      value: -0.1367
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b4925603b6b6884ab402425058a57e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.861
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b4925603b6b6884ab402425058a57e2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -408,15 +416,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b4925603b6b6884ab402425058a57e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.07460625
+      value: 0.13551904
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b4925603b6b6884ab402425058a57e2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.07460625
+      value: 0.13551903
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b4925603b6b6884ab402425058a57e2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.07460625
+      value: 0.13551903
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b4925603b6b6884ab402425058a57e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

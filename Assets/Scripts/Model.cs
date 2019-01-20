@@ -12,7 +12,7 @@ public class Model : MonoBehaviour {
 	private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
 	
 	public Mesh[] ms = new Mesh[8];
-	private int meshNum = 8;
+	private int meshNum = 6;
 
 	public Material outlineMat;
 	public Material solidMat;
@@ -21,7 +21,7 @@ public class Model : MonoBehaviour {
 	void Start ()
 	{
 		//keywords
-		keywords.Add("fewer detail", () => { lessDetail(); });
+		keywords.Add("less detail", () => { lessDetail(); });
 		keywords.Add("outline mode", () => { outlineMode(); });
 		keywords.Add("solid mode", () => { solidMode(); });
 		keywords.Add("more detail", () => { moreDetail(); });

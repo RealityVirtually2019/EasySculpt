@@ -6,8 +6,9 @@
 Imagine yourself learning and creating a perfect sculptures by tracing and manipulating 3D holograms in real time!
 
 ## The BIG picture (1 minute short animation):
-https://www.youtube.com/watch?v=COx-A-lIOmI
-Demo: https://youtu.be/l3XGK6rFCxk?t=62
+https://www.youtube.com/watch?v=GNAUCu9EobQ
+
+Demo: https://youtu.be/GNAUCu9EobQ?t=60
 
 ## Inspiration
 Humans have traced images on paper for centuries. It has been practiced since medieval times, and it is essential to artists, architects, animators, and many others who practice visual art. One member of our team is an artist and aspiring sculptor. She frequently uses 2D tracing device (light table, tracing paper, etc) in making illustrations. She and many of her classmates wished to have a 3D version of tracing device to assist sculpting. Realizing this pain point, we brainstormed together and got excited that modern mixed-reality technology could be the key to the problem!

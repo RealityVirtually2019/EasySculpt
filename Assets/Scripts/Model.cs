@@ -12,7 +12,7 @@ public class Model : MonoBehaviour {
 	private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
 	
 	public Mesh[] ms = new Mesh[8];
-	public int meshNum = 8;
+	private int meshNum = 8;
 
 	public Material outlineMat;
 	public Material solidMat;
@@ -29,8 +29,6 @@ public class Model : MonoBehaviour {
 		keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 		keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
 		keywordRecognizer.Start();
-
-		solidMat = gameObject.GetComponent<Renderer>().material;
 	}
 	
 	private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
@@ -46,34 +44,16 @@ public class Model : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (!isDown)
-		{
-			
-		if (Input.GetMouseButton(0))
-		{
-			isDown = true;
-			moreDetail();
-		}
-		else if (Input.GetMouseButtonDown(1))
-		{
-			isDown = true;
-			lessDetail();
-		}
-		}
-		if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(3))
-		{
-			isDown = false;
-		}
 	}
 
-	private void moreDetail()
+	public void moreDetail()
 	{
 		Debug.Log("more");
 		meshNum++;
 		meshNum = Math.Min(meshNum, ms.Length-1);
 		gameObject.GetComponent<MeshFilter>().mesh = ms[meshNum];
 	}
-	private void lessDetail()
+	public void lessDetail()
 	{
 		Debug.Log("less");
 		meshNum--;
@@ -81,13 +61,26 @@ public class Model : MonoBehaviour {
 		gameObject.GetComponent<MeshFilter>().mesh = ms[meshNum];
 	}
 
-	private void outlineMode()
+	public void outlineMode()
 	{
-		gameObject.GetComponent<Renderer>().material = outlineMat;
+		Material[] mats = gameObject.GetComponent<Renderer>().materials;
+        for (int i=0; i<mats.Length; i++)
+		{
+			mats[i] = outlineMat;
+		}
+        gameObject.GetComponent<Renderer>().materials = mats;
 	}
 
-	private void solidMode()
+	public void solidMode()
 	{
-		gameObject.GetComponent<Renderer>().material = solidMat;
+		Material[] mats = gameObject.GetComponent<Renderer>().materials;
+		Debug.Log(mats.Length);
+        for (int i=0; i<mats.Length; i++)
+		{
+			mats[i] = solidMat;
+		}
+
+        gameObject.GetComponent<Renderer>().materials = mats;
+
 	}
 }

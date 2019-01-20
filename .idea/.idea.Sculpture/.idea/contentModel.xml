@@ -6,6 +6,46 @@
     <e p="C:\Users\Player\Sculpture" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\_MK" t="Include">
+        <e p="MKToonFree" t="Include">
+          <e p="Editor" t="Include">
+            <e p="MKToonFreeEditor.cs" t="Include" />
+          </e>
+          <e p="Shader" t="Include">
+            <e p="Inc" t="Include">
+              <e p="Common" t="Include">
+                <e p="MKToonDef.cginc" t="Include" />
+                <e p="MKToonInc.cginc" t="Include" />
+                <e p="MKToonLight.cginc" t="Include" />
+                <e p="MKToonV.cginc" t="Include" />
+              </e>
+              <e p="Forward" t="Include">
+                <e p="MKToonForward.cginc" t="Include" />
+                <e p="MKToonForwardAddSetup.cginc" t="Include" />
+                <e p="MKToonForwardBaseSetup.cginc" t="Include" />
+                <e p="MKToonForwardIO.cginc" t="Include" />
+              </e>
+              <e p="Outline" t="Include">
+                <e p="MKToonOutlineOnlyBase.cginc" t="Include" />
+                <e p="MKToonOutlineOnlyIO.cginc" t="Include" />
+                <e p="MKToonOutlineOnlySetup.cginc" t="Include" />
+              </e>
+              <e p="ShadowCaster" t="Include">
+                <e p="MKToonShadowCaster.cginc" t="Include" />
+                <e p="MKToonShadowCasterIO.cginc" t="Include" />
+                <e p="MKToonShadowCasterSetup.cginc" t="Include" />
+              </e>
+              <e p="Surface" t="Include">
+                <e p="MKToonSurface.cginc" t="Include" />
+                <e p="MKToonSurfaceIO.cginc" t="Include" />
+              </e>
+            </e>
+            <e p="MKToonFree.shader" t="Include" />
+            <e p="MKToonFreeMobile.shader" t="Include" />
+            <e p="MKToonFreeOutlineOnly.shader" t="Include" />
+          </e>
+        </e>
+      </e>
       <e p="Assets\External" t="Include">
         <e p="HoloToolkit" t="Include">
           <e p="Boundary" t="Include">
@@ -877,15 +917,11 @@
           </e>
         </e>
       </e>
+      <e p="Assets\Menu.cs" t="Include" />
       <e p="Assets\meshSimpleLoad.cs" t="Include" />
+      <e p="Assets\ModelManager.cs" t="Include" />
       <e p="Assets\Scripts" t="Include">
         <e p="Model.cs" t="Include" />
-      </e>
-      <e p="Assets\TSF" t="Include">
-        <e p="Shaders" t="Include">
-          <e p="TSF.shader" t="Include" />
-          <e p="TSFOutline.shader" t="Include" />
-        </e>
       </e>
       <e p="Assets\UIButton.cs" t="Include" />
       <e p="Library" t="ExcludeRecursive" />

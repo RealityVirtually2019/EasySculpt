@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using HoloToolkit.Unity.InputModule;
 using UnityEngine;
-using UnityEngine.SceneManager;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour, IInputClickHandler {
 
@@ -22,6 +22,6 @@ public class Menu : MonoBehaviour, IInputClickHandler {
 	public void OnInputClicked(InputClickedEventData eventData)
 	{
 		model = gameObject.name;
-		SceneManager.LoadScene("Default", LoadSceneMode.single);
+//		SceneManager.LoadScene("Default", LoadSceneMode.single);
 	}
 }

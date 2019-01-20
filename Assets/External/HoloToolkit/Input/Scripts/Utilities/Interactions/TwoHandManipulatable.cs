@@ -99,31 +99,31 @@ namespace HoloToolkit.Unity.InputModule.Utilities.Interactions
         /// <summary>
         /// Property that turns on and off the Visibility of the BoundingBox cloned from the BoundingBoxPrefab reference.
         /// </summary>
-        private bool ShowBoundingBox
-        {
-            set
-            {
-                if (boundingBoxPrefab != null)
-                {
-                    if (boundingBoxInstance == null)
-                    {
-                        // Instantiate Bounding Box from the Prefab
-                        boundingBoxInstance = Instantiate(boundingBoxPrefab) as BoundingBox;
-                    }
+        //private bool ShowBoundingBox
+        //{
+        //    set
+        //    {
+        //        if (boundingBoxPrefab != null)
+        //        {
+        //            if (boundingBoxInstance == null)
+        //            {
+        //                // Instantiate Bounding Box from the Prefab
+        //                boundingBoxInstance = Instantiate(boundingBoxPrefab) as BoundingBox;
+        //            }
 
-                    if (value)
-                    {
-                        boundingBoxInstance.Target = HostTransform.gameObject;
-                        boundingBoxInstance.gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        boundingBoxInstance.Target = null;
-                        boundingBoxInstance.gameObject.SetActive(false);
-                    }
-                }
-            }
-        }
+        //            if (value)
+        //            {
+        //                boundingBoxInstance.Target = HostTransform.gameObject;
+        //                boundingBoxInstance.gameObject.SetActive(true);
+        //            }
+        //            else
+        //            {
+        //                boundingBoxInstance.Target = null;
+        //                boundingBoxInstance.gameObject.SetActive(false);
+        //            }
+        //        }
+        //    }
+        //}
 
         /// <summary>
         /// Change the manipulation mode.
@@ -411,7 +411,7 @@ namespace HoloToolkit.Unity.InputModule.Utilities.Interactions
             InputManager.Instance.PushModalInputHandler(gameObject);
 
             // Show Bounding Box visual on manipulation interaction
-            ShowBoundingBox = true;
+            //ShowBoundingBox = true;
         }
 
         private void OnManipulationEnded()
@@ -419,7 +419,7 @@ namespace HoloToolkit.Unity.InputModule.Utilities.Interactions
             InputManager.Instance.PopModalInputHandler();
 
             // Hide Bounding Box visual on release
-            ShowBoundingBox = false;
+            //ShowBoundingBox = false;
         }
     }
 }

@@ -17,6 +17,6 @@ public class UIButton : MonoBehaviour, IInputClickHandler {
 
 	public void OnInputClicked(InputClickedEventData eventData)
 	{
-        Debug.Log("home");
+        Debug.Log("Default");
 	}
 }

@@ -1,3 +1,7 @@
+<p align = "center">
+    <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/746/471/datas/gallery.jpg" />
+</p>
+
 # Sculpt Trace
 Imagine yourself learning and creating a perfect sculptures by tracing and manipulating 3D holograms in real time!
 

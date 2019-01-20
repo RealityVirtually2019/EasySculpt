@@ -34,7 +34,7 @@ We ran into various challenges. The most frequent one is version mismatch and "b
 ## Accomplishments 
 Although we ran out of time to implement all of our desired features, we were so excited to create a minimum viable product that can guide aspiring sculptors through the process and reduce their sculpting time significantly. This MVP allowed us to ask other participants to test and quickly iterate based on their feedback. 
 
-##Future Works:
+## Future Works:
 1. In the future, we hope to successfully integrate computer vision technology to this application so that it can provide continuous feedback on the user's performance. While sculpting, you can get scored on how accurately you are following the model and can receive constructive feedback+hints to improve your skills! Sculpting is a time-consuming process that requires lots of patience and high attention to details. We believe our mixed reality application can educate a wide range of aspiring artists and spark interest in the future generation of creative sculptors!
 
 2. Sculptors have preferences of additive process (adding material to form shape) and subtractive process (remove/carve material to form shape). Also, some materials such as wood are subtractive process, and some others are additive process. To address these user needs, we can add feature that makes object to become larger in additive process and become smaller in subtractive process.

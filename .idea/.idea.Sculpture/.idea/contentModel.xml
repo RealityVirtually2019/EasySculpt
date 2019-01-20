@@ -877,11 +877,17 @@
           </e>
         </e>
       </e>
-      <e p="Assets\Model.cs" t="Include" />
+      <e p="Assets\meshSimpleLoad.cs" t="Include" />
       <e p="Assets\Scripts" t="Include">
-        <e p="Select.cs" t="Include" />
-        <e p="SelectObject.cs" t="Include" />
+        <e p="Model.cs" t="Include" />
       </e>
+      <e p="Assets\TSF" t="Include">
+        <e p="Shaders" t="Include">
+          <e p="TSF.shader" t="Include" />
+          <e p="TSFOutline.shader" t="Include" />
+        </e>
+      </e>
+      <e p="Assets\UIButton.cs" t="Include" />
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />

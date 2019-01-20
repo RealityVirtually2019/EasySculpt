@@ -5,42 +5,32 @@ using System.Linq;
 using HoloToolkit.Unity.InputModule;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
-using UnityMeshSimplifier;
 
 public class Model : MonoBehaviour {
 
-	private Mesh origMesh;
-	private Mesh[] meshes;
-	private MeshSimplifier meshSimplifier;
 	private KeywordRecognizer keywordRecognizer;
 	private Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
-	public float meshQuality = 0.5f;
-	public float meshStep = 0f;
-	public float meshMin = 0.001f;
+	
+	public Mesh[] ms = new Mesh[8];
+	public int meshNum = 8;
+
+	public Material outlineMat;
+	public Material solidMat;
 	private bool isDown;
-	private int currMesh;
 	
 	void Start ()
 	{
-		meshes = new Mesh[5];
-		origMesh = gameObject.GetComponent<MeshFilter>().mesh;
-		meshSimplifier = new MeshSimplifier();
-		generateMeshes();
-		updateMesh();
-
 		//keywords
-		keywords.Add("less detail", () =>
-		{
-            lessDetail();
-		});
-		keywords.Add("more detail", () =>
-		{
-            moreDetail();
-		});
+		keywords.Add("fewer detail", () => { lessDetail(); });
+		keywords.Add("outline mode", () => { outlineMode(); });
+		keywords.Add("solid mode", () => { solidMode(); });
+		keywords.Add("more detail", () => { moreDetail(); });
 		
 		keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 		keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
-		keywordRecognizer.Start();	
+		keywordRecognizer.Start();
+
+		solidMat = gameObject.GetComponent<Renderer>().material;
 	}
 	
 	private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
@@ -61,7 +51,6 @@ public class Model : MonoBehaviour {
 			
 		if (Input.GetMouseButton(0))
 		{
-			Debug.Log("hi");
 			isDown = true;
 			moreDetail();
 		}
@@ -70,8 +59,6 @@ public class Model : MonoBehaviour {
 			isDown = true;
 			lessDetail();
 		}
-		else if (Input.GetMouseButtonDown(3))
-			updateMesh();
 		}
 		if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(3))
 		{
@@ -79,37 +66,28 @@ public class Model : MonoBehaviour {
 		}
 	}
 
-	void generateMeshes()
-	{
-		meshes[4] = origMesh;
-		meshSimplifier.Initialize(origMesh);
-		meshSimplifier.SimplifyMesh(0.5f);
-		meshes[3] = meshSimplifier.ToMesh();
-		meshSimplifier.Initialize(origMesh);
-		meshSimplifier.SimplifyMesh(0.1f);
-		meshes[2] = meshSimplifier.ToMesh();
-		meshSimplifier.Initialize(origMesh);
-		meshSimplifier.SimplifyMesh(0.001f);
-		meshes[1] = meshSimplifier.ToMesh();
-		meshSimplifier.Initialize(origMesh);
-		meshSimplifier.SimplifyMesh(0.00001f);
-		meshes[0] = meshSimplifier.ToMesh();
-	}
 	private void moreDetail()
 	{
-		currMesh++;
-		currMesh = Math.Min(4, currMesh);
-		updateMesh();
+		Debug.Log("more");
+		meshNum++;
+		meshNum = Math.Min(meshNum, ms.Length-1);
+		gameObject.GetComponent<MeshFilter>().mesh = ms[meshNum];
 	}
 	private void lessDetail()
 	{
-		currMesh--;
-		currMesh = Math.Max(0, currMesh);
-		updateMesh();
+		Debug.Log("less");
+		meshNum--;
+		meshNum = Math.Max(meshNum, 0);
+		gameObject.GetComponent<MeshFilter>().mesh = ms[meshNum];
 	}
-	public void updateMesh()
+
+	private void outlineMode()
 	{
-		Debug.Log("change mesh");
-		gameObject.GetComponent<MeshFilter>().mesh = meshes[currMesh];
+		gameObject.GetComponent<Renderer>().material = outlineMat;
+	}
+
+	private void solidMode()
+	{
+		gameObject.GetComponent<Renderer>().material = solidMat;
 	}
 }
